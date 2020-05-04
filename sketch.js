@@ -1,4 +1,4 @@
-let cnv, soundFile, amp, level;
+let cnv, soundFile, amp, level, mic;
 let red = 252;
 let green = 227;
 let blue = 138;
@@ -24,7 +24,7 @@ function preload() {
 
 function setup() {
   let cnv = createCanvas(windowWidth, windowHeight);
-
+  mic = new p5.AudioIn();
   mic.start();
   // home();
   // styleButton();
@@ -66,7 +66,7 @@ function draw() {
     c = 0;
   }
   console.log("MaxC=" + Math.max(...levelar) + " Avar= " + sum(levelar) / levelar.length);
-  
+
 
 
   if (active === 1) {
